@@ -1,7 +1,7 @@
 package cc.tkmr.model;
 
 // A classe cc.tkmr.infrastructure.Aluno representa as informações do aluno
-class Aluno {
+public class Aluno {
     private String nome;
     private String id;
 

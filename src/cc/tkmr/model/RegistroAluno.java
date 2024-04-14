@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // A classe cc.tkmr.infrastructure.RegistroAluno gerencia as operações de registro de alunos
-class RegistroAluno {
+public class RegistroAluno {
     private List<Aluno> alunosRegistrados;
 
     // Construtor da classe cc.tkmr.infrastructure.RegistroAluno

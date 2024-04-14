@@ -1,31 +1,41 @@
+package cc.tkmr.infrastructure;
+
 import cc.tkmr.model.Aluno;
 import cc.tkmr.model.RegistroAluno;
 
-import java.util.ArrayList;
 import java.util.Scanner;
-
-// A classe RegistroAluno gerencia as operações de registro de alunos
-
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Criando uma instância da classe RegistroAluno
+        // Criando uma instância da classe cc.tkmr.model.RegistroAluno
         RegistroAluno registroAluno = new RegistroAluno();
 
-        // Entrada do usuário
-        String input = scanner.nextLine();
+        // Loop para continuar pedindo informações até que o usuário forneça as informações corretamente
+        while (true) {
+            // Entrada do usuário
+            String input = scanner.nextLine();
 
-        // Separando nome e ID
-        String[] dadosAluno = input.split(", ");
+            // Separando nome e ID
+            String[] dadosAluno = input.split(", ");
 
-        // Criando uma instância da classe Aluno com as informações fornecidas pelo usuário
-        Aluno aluno = new Aluno(dadosAluno[0], dadosAluno[1]);
+            // Verificar se a entrada possui exatamente dois valores separados por vírgula
+            if (dadosAluno.length == 2) {
+                // Criando uma instância da classe cc.tkmr.infrastructure.Aluno com as informações fornecidas pelo usuário
+                Aluno aluno = new Aluno(dadosAluno[0], dadosAluno[1]);
 
-        // TODO: Chamar o método para adicionar o aluno usando a classe RegistroAluno
+                // TODO: Chamar o método para adicionar o aluno usando a classe cc.tkmr.infrastructure.RegistroAluno
+                registroAluno.adicionarAluno(aluno);
 
-        // Fechando o scanner
-        scanner.close();
+                // Fechando o scanner
+                scanner.close();
+
+                // Sai do loop após adicionar o aluno com sucesso
+                break;
+            } else {
+                MensagemHandler.exibirMensagem("Por favor, informe o nome e o ID separados por vírgula.");
+            }
+        }
     }
 }
